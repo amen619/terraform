@@ -3,3 +3,4 @@
 */mykey.pub
 */*.tfstate
 */*.tfstate.backup
+*/private_ips.txt
