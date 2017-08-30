@@ -14,6 +14,7 @@ resource "aws_instance" "frontal" {
   }
 
   provisioner "file" {
+    count = "${element(var.frontales, count.index) == "Frontal-1" ? 1 : 0}"
     source = "script.sh"
     destination = "/tmp/script.sh"
   }  
@@ -31,6 +32,6 @@ resource "aws_instance" "frontal" {
   }
 }
 
-output "public_ip" {
-  value = "${aws_instance.frontal.public_ip}"
+output "public_ips" {
+  value = ["${aws_instance.frontal.*.public_ip}"]
 }
