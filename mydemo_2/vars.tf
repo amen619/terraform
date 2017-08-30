@@ -13,6 +13,5 @@ variable "INSTANCE_USERNAME" {
 variable "frontales" {
   description = "Number of frontales servers"
   type        = "list"
-  default     = ["Frontal-1", "Frontal-2"]  
+  default     = ["Frontal-1", "Frontal-2"]
 }
-
