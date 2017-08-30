@@ -14,7 +14,6 @@ resource "aws_instance" "frontal" {
   }
 
   provisioner "file" {
-    count = "${element(var.frontales, count.index) == "Frontal-1" ? 1 : 0}"
     source = "script.sh"
     destination = "/tmp/script.sh"
   }  
