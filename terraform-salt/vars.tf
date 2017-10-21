@@ -5,6 +5,7 @@ variable "region" {
 variable "machine" {
   default = {
     machinename = "master,ubuntu"
+    template = "cloudInitMaster,cloudInitUbuntu"
   }
 }
 

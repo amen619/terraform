@@ -28,5 +28,5 @@ resource "aws_instance" "frontal" {
 # Render a part using a `template_file`
 data "template_file" "script" {
   count    = "${length(split(",", lookup(var.machine, "machinename")))}"
-  template = "${file("${path.module}/cloudInit/cloudInit.tpl")}"
+  template = "${file("${path.module}/cloudInit/${element(split(",", lookup(var.machine, "template")), count.index)}.tpl")}"
 }
