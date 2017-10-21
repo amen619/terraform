@@ -30,8 +30,3 @@ data "template_file" "script" {
   count    = "${length(split(",", lookup(var.machine, "machinename")))}"
   template = "${file("${path.module}/cloudInit/cloudInit.tpl")}"
 }
-
-
-output "public_ips" {
-  value = ["${aws_instance.frontal.*.public_ip}"]
-}
