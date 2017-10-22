@@ -9,6 +9,14 @@ resource "aws_security_group" "securityGroup" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
+  # Access to port 4505 and 4506
+  ingress {
+    from_port = 4505
+    to_port = 4506
+    protocol = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
   # Internet access
   egress {
     from_port   = 0
