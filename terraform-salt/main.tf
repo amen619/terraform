@@ -3,7 +3,7 @@ module "securityGroup" {
 }
 
 module "machines" {
-  source        = "./modules/machines"
+  source        = "./modules/linuxmachines"
   securityGroup = "${module.securityGroup.securityGroup}"
   keys          = "${var.keys}"
   machine       = "${var.machine}"
