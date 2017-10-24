@@ -26,11 +26,11 @@ resource "aws_instance" "frontal" {
 ###############################
 
 # Render a part using a `template_file`
-data "template_file" "script" {
-  count    = "${length(split(",", lookup(var.machine, "machinename")))}"
-  template = "${file("${path.module}/cloudInit/${element(split(",", lookup(var.machine, "template")), count.index)}.tpl")}"
-
-  vars {
-    salt-master = "${aws_instance.frontal.0.private_ip}"
-  }
-}
+# data "template_file" "script" {
+#   count    = "${length(split(",", lookup(var.machine, "machinename")))}"
+#   template = "${file("${path.module}/cloudInit/${element(split(",", lookup(var.machine, "template")), count.index)}.tpl")}"
+#
+#   vars {
+#     salt-master = "${aws_instance.frontal.0.private_ip}"
+#   }
+# }
